@@ -2,9 +2,14 @@ import create from 'zustand';
 
 const ytStore = (set: any) => ({
 	videoIds: [],
-	setVideoIds: (id: string) => {
+	setVideoId: (id: string) => {
 		return set((state: any) => {
-			let videos = [...state.videoIds, id];
+			let alreadyExists = state.videoIds.indexOf(id);
+			let videos = [...state.videoIds];
+			if (alreadyExists !== -1) {
+				videos.splice(alreadyExists, 1);
+			}
+			videos = [id, ...videos];
 			localStorage.setItem('videosIds', JSON.stringify(videos));
 			return { videoIds: videos };
 		});
