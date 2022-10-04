@@ -17,7 +17,6 @@ body {
 	background: var(--primary-color);
 }
 section {
-	width: 100vw;
 	min-height: 100vh;
 }
 @for $i from 1 through 10 {
@@ -89,4 +88,55 @@ input[type='text'] {
 	font-weight: 900;
 	border-radius: 5px;
 	cursor: pointer;
+}
+.bottom-con {
+	width: 100%;
+}
+.images-con {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, 250px);
+	gap: 25px;
+}
+.image-con {
+	height: 200px;
+	border-radius: 10px;
+	position: relative;
+	background: #000;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	isolation: isolate;
+}
+.image-con > img {
+	width: 100%;
+	// height: auto;
+}
+.cross-btn {
+	position: absolute;
+	z-index: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 20px;
+	height: 20px;
+	background: #fff;
+	color: var(--grey);
+	border-radius: 50%;
+	right: 0;
+	top: 0;
+	translate: 50% -50%;
+	cursor: pointer;
+}
+.modal {
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	background: rgba(0, 0, 0, 0.624);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.modal iframe {
+	width: 70%;
+	aspect-ratio: 16 /9;
 }
