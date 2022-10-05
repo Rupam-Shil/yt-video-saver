@@ -140,3 +140,23 @@ input[type='text'] {
 	width: 70%;
 	aspect-ratio: 16 /9;
 }
+
+@media only screen and (max-width: 760px) {
+	.main-con {
+		padding: 1rem;
+	}
+	.top-con {
+		flex-direction: column;
+	}
+	.images-con {
+		grid-template-columns: repeat(auto-fit, 160px);
+		gap: unset;
+		justify-content: space-between;
+	}
+	.image-con {
+		height: max-content;
+	}
+	.modal iframe {
+		width: 90%;
+	}
+}
